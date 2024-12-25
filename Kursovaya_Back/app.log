@@ -1,0 +1,53 @@
+2024-12-25 13:56:01,119 - main - INFO - Attempting to register user: string
+2024-12-25 13:56:01,214 - passlib.handlers.bcrypt - DEBUG - bcrypt 'builtin' backend not enabled via $PASSLIB_BUILTIN_BCRYPT
+2024-12-25 13:56:01,214 - main - ERROR - Error during registration: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+2024-12-25 13:57:38,375 - main - INFO - Attempting to register user: string
+2024-12-25 13:57:38,385 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\vikto\PycharmProjects\Kursovaya_Back\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-12-25 13:57:38,403 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-12-25 13:57:38,403 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-12-25 13:57:38,654 - main - INFO - User string registered successfully
+2024-12-25 14:00:13,888 - main - INFO - Attempting to log in user: string
+2024-12-25 14:00:13,897 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\vikto\PycharmProjects\Kursovaya_Back\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-12-25 14:00:13,911 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-12-25 14:00:13,911 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-12-25 14:00:14,147 - main - INFO - User string logged in successfully
+2024-12-25 14:00:26,369 - main - INFO - Attempting to log in user: string1
+2024-12-25 14:00:26,370 - main - WARNING - Invalid credentials for user: string1
+2024-12-25 14:00:26,371 - main - ERROR - Error during login: 401: Invalid username or password
+2024-12-25 14:00:37,136 - main - INFO - Attempting to register user: string1
+2024-12-25 14:00:37,137 - main - WARNING - User with username or email already exists: string1
+2024-12-25 14:00:37,137 - main - ERROR - Error during registration: 400: User with this username or email already exists
+2024-12-25 14:00:48,562 - main - INFO - Attempting to register user: string1
+2024-12-25 14:00:48,564 - main - WARNING - User with username or email already exists: string1
+2024-12-25 14:00:48,564 - main - ERROR - Error during registration: 400: User with this username or email already exists
+2024-12-25 14:00:58,246 - main - INFO - Attempting to register user: string
+2024-12-25 14:00:58,247 - main - WARNING - User with username or email already exists: string
+2024-12-25 14:00:58,247 - main - ERROR - Error during registration: 400: User with this username or email already exists
+2024-12-25 14:02:25,573 - main - INFO - Attempting to register user: string
+2024-12-25 14:02:25,580 - main - WARNING - User with username or email already exists: string
+2024-12-25 14:02:25,581 - main - ERROR - Error during registration: 400: User with this username or email already exists
+2024-12-25 14:02:51,827 - main - INFO - Attempting to register user: Коля
+2024-12-25 14:02:51,829 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\vikto\PycharmProjects\Kursovaya_Back\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2024-12-25 14:02:51,830 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2024-12-25 14:02:51,830 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2024-12-25 14:02:52,072 - main - INFO - User Коля registered successfully
+2024-12-25 14:03:25,666 - main - INFO - Attempting to log in user: Коля
+2024-12-25 14:03:25,881 - main - INFO - User Коля logged in successfully
+2024-12-25 14:03:35,576 - main - INFO - Attempting to register user: Коля
+2024-12-25 14:03:35,577 - main - WARNING - User with username or email already exists: Коля
+2024-12-25 14:03:35,577 - main - ERROR - Error during registration: 400: User with this username or email already exists
