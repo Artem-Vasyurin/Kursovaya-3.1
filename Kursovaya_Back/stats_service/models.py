@@ -1,17 +1,21 @@
 # stats_service/models.py
-from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql import func
-from auth_service.database import Base
+from stats_service.database import Base
 from datetime import datetime
-
 
 class UserStatistics(Base):
     __tablename__ = "user_statistics"
 
-    id = Column(Integer, primary_key=True)
-    registrations = Column(Integer, default=0)
-    last_update = Column(DateTime, default=datetime.utcnow)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    event = Column(String, nullable=False)  # Название события
+    name = Column(String, nullable=False)   # Имя пользователя
+    time = Column(DateTime, default=datetime.utcnow)  # Время события
 
-    def increment_registrations(self):
-        self.registrations += 1
-        self.last_update = datetime.utcnow()
+class ModStatistics(Base):
+    __tablename__ = "mod_statistics"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    action = Column(String, nullable=False)  # Действие (например, загрузка)
+    mod_name = Column(String, nullable=False)  # Название мода
+    time = Column(DateTime, default=datetime.utcnow)  # Время события

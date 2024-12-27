@@ -5,8 +5,13 @@ import os
 RABBITMQ_HOST = os.getenv("RABBITMQ_HOST", "localhost")
 RABBITMQ_PORT = os.getenv("RABBITMQ_PORT", 5672)
 
+def create_rabbit_connection():
+    """Создание соединения с RabbitMQ"""
+    return pika.BlockingConnection(pika.ConnectionParameters(RABBITMQ_HOST, RABBITMQ_PORT))
+
 def send_mod_message(mod_data):
-    connection = pika.BlockingConnection(pika.ConnectionParameters(RABBITMQ_HOST, RABBITMQ_PORT))
+    """Отправка сообщения в RabbitMQ"""
+    connection = create_rabbit_connection()
     channel = connection.channel()
 
     # Отправка в очередь mod_queue
@@ -16,8 +21,8 @@ def send_mod_message(mod_data):
         routing_key='mod_queue',
         body=message,
         properties=pika.BasicProperties(
-            delivery_mode=2,  # Сообщение будет сохраняться
+            delivery_mode=2,  # Сообщение будет сохраняться в случае сбоя
         )
     )
-    print(f"Sent mod data to RabbitMQ: {mod_data}")
+    print("Sent data to RabbitMQ")
     connection.close()

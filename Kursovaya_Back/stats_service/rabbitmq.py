@@ -18,7 +18,7 @@ def consume_user_data():
     def callback(ch, method, properties, body):
         user_data = json.loads(body)
         print(f"Received user data: {user_data}")
-        # Здесь можно добавить обработку статистики
+
 
     rabbitmq_channel.basic_consume(queue='user_queue', on_message_callback=callback, auto_ack=True)
     rabbitmq_channel.start_consuming()
@@ -27,7 +27,7 @@ def consume_mod_data():
     def callback(ch, method, properties, body):
         mod_data = json.loads(body)
         print(f"Received mod data: {mod_data}")
-        # Здесь можно добавить обработку статистики
+
 
     rabbitmq_channel.basic_consume(queue='mod_queue', on_message_callback=callback, auto_ack=True)
     rabbitmq_channel.start_consuming()

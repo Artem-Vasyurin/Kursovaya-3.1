@@ -13,11 +13,9 @@ class Modification(Base):
     created_at = Column(Integer)  # timestamp
     updated_at = Column(Integer)  # timestamp
     category_id = Column(Integer, ForeignKey('categories.id'))
-    file_path = Column(String)  # Путь к файлу
-    author_id = Column(Integer, ForeignKey('users.id'))  # Добавляем связь с автором
+    file_path = Column(String)  # Добавляем поле для хранения пути к файлу
 
     category = relationship("Category", back_populates="modifications")
-    author = relationship("User", back_populates="modifications")
 
 class Category(Base):
     __tablename__ = 'categories'

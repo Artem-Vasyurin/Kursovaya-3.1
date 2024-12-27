@@ -11,6 +11,7 @@ from auth_service.auth import verify_password, hash_password
 from auth_service.rabbitmq import create_rabbitmq_channel
 from auth_service.config import RABBITMQ_QUEUE
 
+
 router = APIRouter()
 
 class RegisterUser(BaseModel):
